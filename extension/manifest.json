@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Authenticate with backend",
+  "description": "How to autenticate and maintain a session with the backend",
+  "version": "0.0.1",
+  "icons": {
+    "128": "imgs/id_token.png"
+  },
+  "background": {
+    "service_worker": "sw/sw.js",
+    "type": "module"
+  },
+  "action": {},
+  "permissions": [
+    "identity",
+    "scripting",
+    "activeTab",
+    "storage",
+    "cookies"
+  ],
+  "options_page": "options/options.html",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "*.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "http://*:*/",
+    "https://*:*/"
+  ],
+  "oauth2": {
+    "client_id": "YOUR CLIENT ID.apps.googleusercontent.com",
+    "client_id_for_web": "YOUR CLIENT ID.apps.googleusercontent.com",
+    "scopes": [
+      "email"
+    ],
+    "redirect_path": "back"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjOvvMAlgt070V/DyRLmUd/Ko9mi0WZwTKZOAp1r1+yvhzyj5DytTjd/8fQp7/KHJueDzT+NBrmiFBS8ES1NaFmNCCK8sLIIDrSukXlml6EcWpHP43I1dN/HcA9DNZtVGqmXXH2hIIHrNHwbYnqV/UHGTRqEFOB6AoTmiE3+NFt5O6eIf/iEDHWgnaxpMzsHNzMngfG4mr3RLmVZ8l4qH4/gj2UtMSgCN+lTd+leG4TumTUtXqs2VEwQAzZfxI61o3D5mE1eF1hyHzPvtCqaLaeTZhZYYVXTg7F34G/bXagQPT70fSGRgk1yUGdEcUCbMPaVDJL20Vkxr1qInGBs+fwIDAQAB"
+}
